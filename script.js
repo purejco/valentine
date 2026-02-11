@@ -1,22 +1,36 @@
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const msg = document.getElementById("message");
+const music = document.getElementById("bgMusic");
+
+// Try to start music on first interaction anywhere (works best on iPhone)
+function startMusic() {
+  if (!music) return;
+  music.volume = 0.6;
+  music.play().catch((err) => {
+    console.log("Music blocked:", err);
+    msg.textContent = "Tap again for the song 🎶";
+  });
+}
+
+// First tap/click anywhere starts music (once)
+document.addEventListener("click", startMusic, { once: true });
+document.addEventListener("touchstart", startMusic, { once: true });
 
 yesBtn.addEventListener("click", () => {
-  msg.textContent = "YES!!!! 💞 Okay date night is locked innnn, i love you.";
+  startMusic(); // ensure music starts on YES
+  msg.textContent = "YESSSS 😭💞 Okay date night is locked in. I love you.";
   confettiHearts();
 });
 
 noBtn.addEventListener("mouseover", () => {
-  // playful “no” button dodge on hover
   const x = Math.random() * 240 - 120;
   const y = Math.random() * 180 - 90;
   noBtn.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 function confettiHearts() {
-  // tiny confetti without libraries
-  for (let i = 0; i < 24; i++) {
+  for (let i = 0; i < 25; i++) {
     const s = document.createElement("span");
     s.textContent = ["💖","💘","💗","💞","💕"][Math.floor(Math.random()*5)];
     s.style.position = "fixed";
@@ -27,6 +41,7 @@ function confettiHearts() {
     document.body.appendChild(s);
 
     const fall = 1500 + Math.random() * 1200;
+
     s.animate(
       [
         { transform: "translateY(0)", opacity: 1 },
