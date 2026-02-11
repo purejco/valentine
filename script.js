@@ -19,7 +19,7 @@ document.addEventListener("touchstart", startMusic, { once: true });
 
 yesBtn.addEventListener("click", () => {
   startMusic(); // ensure music starts on YES
-  msg.textContent = "YESSSS 😭💞 Okay date night is locked in. I love you.";
+  msg.textContent = "guys she said YES LESSS GOO💞 okay date night is a lock,i wuv you<3";
   confettiHearts();
 });
 
