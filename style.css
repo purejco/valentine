@@ -27,13 +27,9 @@ h1 { margin: 4px 0 12px; }
 .photo {
   margin: 14px auto;
   width: min(360px, 80vw);
-  aspect-ratio: 1 / 1;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 2px solid rgba(255, 0, 100, 0.18);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  text-align: center;
 }
-.photo img { width: 100%; height: 100%; object-fit: cover; }
+
 
 .buttons {
   display: flex;
@@ -52,7 +48,7 @@ button {
 #yesBtn { background: #ff2f7a; color: white; }
 #noBtn  { background: #ffe0ea; color: #9a1a45; }
 
-.music { margin-top: 12px; }
+
 .message { margin-top: 14px; font-size: 18px; font-weight: 600; }
 
 .bg-hearts::before {
@@ -64,4 +60,26 @@ button {
   font-size: 42px;
   opacity: 0.12;
   transform: rotate(-10deg);
+}
+
+
+.caption {
+  font-size: 12px;
+  margin-top: 6px;
+  opacity: 0.65;
+  font-style: italic;
+}
+
+.photo-frame {
+  aspect-ratio: 1 / 1;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 0, 100, 0.18);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+}
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
