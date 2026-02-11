@@ -3,7 +3,7 @@ const noBtn = document.getElementById("noBtn");
 const msg = document.getElementById("message");
 const music = document.getElementById("bgMusic");
 
-// Try to start music on first interaction anywhere (works best on iPhone)
+// first interaction anywhere 
 function startMusic() {
   if (!music) return;
   music.volume = 0.6;
@@ -13,7 +13,7 @@ function startMusic() {
   });
 }
 
-// First tap/click anywhere starts music (once)
+// First tap/click anywhere starts music 
 document.addEventListener("click", startMusic, { once: true });
 document.addEventListener("touchstart", startMusic, { once: true });
 
